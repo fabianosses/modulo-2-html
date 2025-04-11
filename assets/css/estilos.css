@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+
+/*reset de css a html*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html body {
+    height: 100%;
+}
+
+body {
+    font-family: "Anton", sans-serif;
+    font-size: 1.2em;
+    min-height: 100%;
+}
+
+.contenedor > * {
+    box-shadow: -1px 1px 0px rgba(0, 0, 0, 0.75);
+    text-align: center;
+    padding: 50px;
+    border-radius: 10px;
+}
+
+.header {
+    grid-area: header;
+    background-color: aqua;
+}
+
+.nav {
+    grid-area: nav;
+    background-color: coral;
+}
+
+.aside {
+    grid-area: aside;
+    background-color: red;
+}
+
+.article {
+    grid-area: article;
+    background-color: bisque;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: gray;
+}
+
+.contenedor {
+    display: grid;
+    gap: 10px;
+    grid-template:
+        "header" 100px
+        "nav" 100px
+        "article" auto
+        "aside" 100px
+        "footer" 100px;
+}
+
+/*media query*/
+@media (min-width:600px){
+    .contenedor{
+        grid-template:
+        "header header" 100px
+        "nav nav" 100px
+        "aside article" auto
+        "footer footer" 100px;
+    }
+}
